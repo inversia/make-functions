@@ -1,0 +1,17 @@
+{
+  "name": "babayka-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "ololog": "^1.1.87"
+  },
+  "scripts": {
+    "test": "mocha --reporter ololog/reporter --watch --inspect"
+  },
+  "author": "Inversia",
+  "license": "ISC"
+}

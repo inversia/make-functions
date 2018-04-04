@@ -1,6 +1,6 @@
 global.log       = require ('ololog')
 const { assert } = require ('chai')
-const { split, contains, join, reverse, substring} = require ('./index')
+const { split, contains, join, reverse, substring, replace} = require ('./index')
 
 describe ('babayka-lib', () => {
 
@@ -29,14 +29,14 @@ describe ('babayka-lib', () => {
         assert.deepEqual (join (['foo', 'bar', 'baz'], '+'), 'foo+bar+baz')
     })
 
-    it.only ('splits strings with separator', () => {
+    it ('splits strings with separator', () => {
 
         assert.deepEqual (split ('foo+bar+baz', '+'), ['foo', 'bar', 'baz'])
 
         assert.deepEqual (split ('2*3', '*'), ['2', '3'])
     })
 
-    it.only ('splits strings with separator (multiple characters)', () => {
+    it ('splits strings with separator (multiple characters)', () => {
 
         assert.deepEqual (split ('2плюс3плюс4плюс5', 'плюс'), ['2', '3', '4', '5'])
     })
@@ -54,6 +54,13 @@ describe ('babayka-lib', () => {
         assert.deepEqual (substring ('почему всё так плохо',  0,     20),      'почему всё так плохо')
         assert.deepEqual (substring ('почему всё так плохо', -9999,  2323123), 'почему всё так плохо')
     })
+
+    it.only ('replace strings', () => {
+
+        assert.deepEqual (replace ('fooOMGbarOMGbaz', 'OMG', 'GMO'), 'fooGMObarGMObaz')
+
+    })
+
 })
 
 
