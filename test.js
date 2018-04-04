@@ -1,6 +1,6 @@
 global.log       = require ('ololog')
 const { assert } = require ('chai')
-const { split, contains, join, reverse, substring, replace} = require ('./index')
+const { split, contains, join, reverse, substring, replace} = require ('./functions')
 
 describe ('babayka-lib', () => {
 

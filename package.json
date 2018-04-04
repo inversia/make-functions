@@ -2,7 +2,7 @@
   "name": "babayka-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions.js",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.1.2",
