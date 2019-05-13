@@ -116,5 +116,46 @@ function replace (string, word, substitution ) {
 
 }
 
+/*
 
-module.exports = { split, contains, join, reverse, substring, replace }
+        assert.deepEqual (
+            filter (['abc', 'foo', 'qux', 'foo', 'baz'], (x) => x !== 'foo'),
+            ['abc', 'qux', 'baz'])
+
+        assert.deepEqual (
+            filter (['abc', 'foo', 'qux', 'foo', 'baz'], (x, i) => (i % 2) === 0),
+            ['abc', 'qux', 'baz'])
+ */
+
+function filter (arr, f) {
+    
+    let newArr = []
+
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (f(arr[i],i) === true) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+
+const sort = ([first, ...rest]) => (first === undefined)
+                                        ? []
+                                        : [...sort(rest.filter (x => x < first)),
+                                           first,
+                                           ...sort(rest.filter (x => x >= first))]
+
+//     rest.filter (x => x < first) //=== [] ? [] : sort(rest.filter (x => x <= first))
+//     return
+//     rest.filter (x => x > first) //===  ? [] : sort(rest.filter (x => x <= first))
+
+//     return [...a, first, ...b]
+//     //слияние массивов concat?
+// }
+
+module.exports = { split, contains, join, reverse, substring, replace, filter, sort }
+
+
